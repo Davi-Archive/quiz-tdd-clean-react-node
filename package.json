@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/d1av/clean-react/issues"
   },
-  "homepage": "https://github.com/d1av/clean-react#readme"
+  "homepage": "https://github.com/d1av/clean-react#readme",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.4.0"
+  }
 }
