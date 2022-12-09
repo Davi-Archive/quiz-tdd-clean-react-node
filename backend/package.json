@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests",
-    "test:staged": "jest --passWithNoTests"
+    "test:staged": "jest --passWithNoTests",
+    "prepare": "cd .. && husky install .config/husky"
   },
   "keywords": [],
   "author": "",
