@@ -9,7 +9,23 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "git-commit-msg-linter": "^4.4.0"
+  "devDependencies": {
+    "@types/node": "^18.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "git-commit-msg-linter": "^4.4.0",
+    "prettier": "^2.8.1",
+    "prettier-eslint": "^15.0.1",
+    "typescript": "^4.9.4"
   }
 }
