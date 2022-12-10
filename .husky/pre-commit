@@ -2,5 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 cd backend
-npx eslint --fix
 npm run test:staged
+
+#cd frontend
+#npm run test:staged
