@@ -1,13 +1,11 @@
+import { AccountModel } from "../models/account"
+
 export interface AddAccount {
-    add: (account: AddAccount.Params) => Promise<AddAccount.Result>
+    add: (account: AddAccountModel) => AccountModel
 }
 
-export namespace AddAccount {
-    export type Params = {
+export interface AddAccountModel {
         name: string
         email: string
         password: string
-    }
-
-    export type Result = boolean
 }
