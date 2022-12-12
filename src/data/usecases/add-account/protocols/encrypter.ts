@@ -1,5 +1,5 @@
-import { AccountModel } from "@/domain/models/account";
+import { AccountModel } from '@/domain/models/account'
 
 export interface Encrypter {
-    encrypt(value: string): Promise<AccountModel>
+  encrypt: (value: string) => Promise<AccountModel>
 }

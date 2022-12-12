@@ -7,15 +7,15 @@ export class SignUpController implements Controller {
     private readonly addAccount: AddAccount
 
     constructor(emailValidator: EmailValidator, addAccount: AddAccount) {
-        this.emailValidator = emailValidator;
-        this.addAccount = addAccount;
+        this.emailValidator = emailValidator
+        this.addAccount = addAccount
     }
 
     async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
         try {
             const requiredFields = ['name', 'email', 'password', 'passwordConfirmation']
             for (const field of requiredFields) {
-                if (!httpRequest.body[field]) {
+                if (!(httpRequest.body[field])) {
                     return badRequest(new MissingParamError(field))
                 }
             }
@@ -30,7 +30,7 @@ export class SignUpController implements Controller {
             const account = await this.addAccount.add({
                 name,
                 email,
-                password,
+                password
             })
             return ok(account)
         } catch (error) {

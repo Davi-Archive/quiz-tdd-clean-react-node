@@ -1,12 +1,12 @@
-export type SurveyModel = {
-    id: string
-    question: string
-    answers: SurveyAnswerModel[]
-    date: Date
-    didAnswer?: boolean
+export interface SurveyModel {
+  id: string
+  question: string
+  answers: SurveyAnswerModel[]
+  date: Date
+  didAnswer?: boolean
 }
 
-type SurveyAnswerModel = {
-    image?: string
-    answer: string
+interface SurveyAnswerModel {
+  image?: string
+  answer: string
 }

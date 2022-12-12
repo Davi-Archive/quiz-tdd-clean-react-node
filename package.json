@@ -9,7 +9,8 @@
     "test:staged": "jest --passWithNoTests",
     "prepare": "cd .. && husky install .config/husky",
     "postinstall": "husky install",
-    "clear_jest": "jest --clearCache"
+    "clear_jest": "jest --clearCache",
+    "lint": "eslint --fix --ext js,ts,tsx src"
   },
   "keywords": [],
   "author": "",
