@@ -7,14 +7,13 @@
   "scripts": {
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
-    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:unit": "npm test -- --watch",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test --findRelatedTests",
     "test:ci": "npm test -- --coverage",
     "prepare": "cd .. && husky install .config/husky",
     "postinstall": "husky install",
     "clear_jest": "jest --clearCache",
-    "lint": "eslint --fix --ext js,ts,tsx src",
     "eslint":"eslint --fix --ext ts"
   },
   "keywords": [],

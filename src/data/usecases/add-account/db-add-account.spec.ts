@@ -7,7 +7,7 @@ interface SutTypes {
 }
 
 const makeEncrypter = (): any => {
-  class EncrypterStub implements Encrypter {
+  class EncrypterStub {
     async encrypt (value: string): Promise<string> {
       return await new Promise(resolve => resolve('hashed_password'))
     }
@@ -33,7 +33,7 @@ describe('DbAddAccount Usecase', () => {
       password: 'valid_password'
     }
     await sut.add(accountData)
-    expect(encryptSpy).toHaveBeenLastCalledWith('valid_password')
+    expect(encryptSpy).toHaveBeenCalledWith('valid_password')
   })
 
   test('Should throw if Encrypter throws', async () => {
