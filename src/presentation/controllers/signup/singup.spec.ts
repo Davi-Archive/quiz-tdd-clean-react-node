@@ -1,12 +1,7 @@
 import { SignUpController } from './signup'
 import { describe, expect, test } from '@jest/globals';
-import { InvalidParamError, MissingParamError, ServerError } from '../errors'
-import { EmailValidator } from '../protocols';
-import { AddAccount,AddAccountModel } from '@/domain/usecases/add-account';
-import { AccountModel } from '@/domain/models/account';
-import { DbAddAccount } from '@/data/usecases/add-account/db-add-account';
-
-
+import { InvalidParamError, MissingParamError, ServerError } from '../../errors'
+import { EmailValidator, AccountModel, AddAccount, AddAccountModel } from './singup-protocols';
 
 const makeEmailValidator = (): EmailValidator => {
     class EmailValidatorStub implements EmailValidator {
@@ -19,12 +14,12 @@ const makeEmailValidator = (): EmailValidator => {
 
 const makeAddAccount = (): AddAccount => {
     class AddAccountStub implements AddAccount {
-        add (account: AddAccountModel): AccountModel {
+        add(account: AddAccountModel): AccountModel {
             const fakeAccount = {
                 id: 'valid_id',
                 name: 'valid_name',
                 email: 'valid_email@mail.com',
-                password:'valid_password'
+                password: 'valid_password'
             }
             return fakeAccount;
         }
@@ -174,7 +169,7 @@ describe('SignUp Controller', () => {
 
     test('Should call AddAccount with correct values', () => {
         const { sut, addAccountStub } = makeSut()
-        const addSpy = jest.spyOn(addAccountStub,'add')
+        const addSpy = jest.spyOn(addAccountStub, 'add')
         const httpRequest = {
             body: {
                 name: 'any_name',
@@ -185,7 +180,7 @@ describe('SignUp Controller', () => {
         }
         sut.handle(httpRequest)
         expect(addSpy).toHaveBeenCalledWith({
-            name:'any_name',
+            name: 'any_name',
             email: 'any_email@mail.com',
             password: 'any_password'
         })
