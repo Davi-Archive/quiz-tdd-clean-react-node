@@ -15,6 +15,7 @@ export class SignUpController implements Controller {
         try {
             const requiredFields = ['name', 'email', 'password', 'passwordConfirmation']
             for (const field of requiredFields) {
+                // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
                 if (!(httpRequest.body[field])) {
                     return badRequest(new MissingParamError(field))
                 }
