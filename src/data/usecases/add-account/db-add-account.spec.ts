@@ -67,7 +67,7 @@ describe('DbAddAccount Usecase', () => {
       password: 'valid_password'
     }
     const promise = await sut.add(accountData)
-    await expect(promise).rejects.toThrow()
+    await expect(promise).toThrow()
   })
 
   test('Should call AddAccountRepository with correct values', async () => {
