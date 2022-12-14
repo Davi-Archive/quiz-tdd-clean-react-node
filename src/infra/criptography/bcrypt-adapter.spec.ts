@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt'
-import { resolve } from 'path'
 import { BcryptAdapter } from './bcrypt-adapter'
 
 const SALT = 12
