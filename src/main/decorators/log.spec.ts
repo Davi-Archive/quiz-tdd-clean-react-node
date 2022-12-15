@@ -2,12 +2,36 @@ import { Controller, HttpRequest, HttpResponse } from "@/presentation/protocols"
 import { LogControllerDecorator } from "./log"
 import { serverError } from "@/presentation/helpers/http-helpers"
 import { LogErrorRepository } from "@/data/protocols/log-error-repository"
+import { AccountModel } from "@/domain/models/account"
 
 
 interface SutTypes {
   sut: LogControllerDecorator
   controllerStub: Controller
   logErrorRepositoryStub: LogErrorRepository
+}
+
+const makeFakeAccount = (): AccountModel => ({
+  id: 'valid_id',
+  name: 'valid_name',
+  email: 'valid_email@mail.com',
+  password: 'valid_password'
+
+})
+
+const makeFakeRequest = (): HttpRequest => ({
+  body: {
+    name: 'any_name',
+    email: 'any_email@mail.com',
+    password: 'any_password'
+  }
+})
+
+const makeFakeServerError = ():HttpResponse =>{
+  const fakeError = new Error()
+  fakeError.stack='any_stack'
+  const error = serverError(fakeError)
+  return error
 }
 
 const makeController = (): Controller => {
